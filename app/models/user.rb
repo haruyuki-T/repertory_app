@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -15,5 +17,4 @@
 #
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
-
 end

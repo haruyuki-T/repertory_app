@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: scenes
@@ -9,5 +11,4 @@
 #
 class Scene < ApplicationRecord
   has_many :posts, dependent: :destroy
-
 end
