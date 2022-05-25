@@ -61,6 +61,9 @@ group :development do
 
   # rubocop
   gem "rubocop-rails_config"
+
+  # utility
+  gem "annotate"
 end
 
 group :test do
