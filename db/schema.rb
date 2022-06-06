@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2022_06_06_091220) do
     t.string "email", null: false
     t.integer "sex", null: false
     t.integer "age", null: false
-    t.string "password_digest", null: false
     t.string "picture"
     t.text "introduction"
     t.datetime "created_at", null: false

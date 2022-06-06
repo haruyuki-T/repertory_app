@@ -4,16 +4,24 @@
 #
 # Table name: users
 #
-#  id              :bigint           not null, primary key
-#  name            :string(255)      not null
-#  email           :string(255)      not null
-#  sex             :integer          not null
-#  age             :integer          not null
-#  password_digest :string(255)      not null
-#  picture         :string(255)
-#  introduction    :text(65535)
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                     :bigint           not null, primary key
+#  name                   :string(255)      not null
+#  email                  :string(255)      not null
+#  sex                    :integer          not null
+#  age                    :integer          not null
+#  picture                :string(255)
+#  introduction           :text(65535)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
