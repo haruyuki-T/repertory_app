@@ -49,6 +49,7 @@ group :development, :test do
   gem "faker"
 
   gem "devise"
+  gem "rails-i18n"
 end
 
 group :development do
