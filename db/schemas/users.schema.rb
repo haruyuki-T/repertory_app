@@ -3,8 +3,8 @@
 create_table :users, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bin" do |t|
   t.string  :name, null: false
   t.string  :email, null: false
-  t.integer  :sex, null: false
-  t.integer  :age, null: false
+  t.integer  :sex
+  t.integer  :age
   t.string :picture
   t.text :introduction
   t.datetime :created_at, null: false

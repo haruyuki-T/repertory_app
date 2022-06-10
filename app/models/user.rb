@@ -7,8 +7,8 @@
 #  id                     :bigint           not null, primary key
 #  name                   :string(255)      not null
 #  email                  :string(255)      not null
-#  sex                    :integer          not null
-#  age                    :integer          not null
+#  sex                    :integer
+#  age                    :integer
 #  picture                :string(255)
 #  introduction           :text(65535)
 #  created_at             :datetime         not null
