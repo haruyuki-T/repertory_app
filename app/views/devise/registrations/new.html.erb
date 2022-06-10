@@ -1,0 +1,41 @@
+<div class="container devise">
+  <div class="devise-box">
+    <p class="devise-title">新しいアカウントを作成</p>
+    <div class="devise-inner">
+
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <div class="required">
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名", class: "devise-form" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="required">
+          <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "devise-form" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="required">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "devise-form" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="required">
+          <%= f.password_field :password_confirmation, placeholder: "パスワード確認", class: "devise-form" %>
+          </div>
+        </div>
+
+        <div class="action-btn">
+          <%= f.submit "新しいアカウントを作成", class: "devise-login-btn" %>
+        </div>
+      <% end %>
+
+      <%= link_to "すでにアカウントをお持ちの方はログイン", new_user_session_path %>
+    </div>
+  </div>
+</div>
