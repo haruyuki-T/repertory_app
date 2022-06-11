@@ -5,7 +5,6 @@ create_table :users, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bi
   t.string  :email, null: false
   t.integer  :sex
   t.integer  :age
-  t.string :picture
   t.text :introduction
   t.datetime :created_at, null: false
   t.datetime :updated_at, null: false
