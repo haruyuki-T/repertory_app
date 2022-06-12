@@ -73,6 +73,78 @@ header {
   margin-left: 10px;
 }
 
+/*hamburger*/
+.hamburger {
+  display : block;
+  position: fixed;
+  right : 13px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  top  : 60px;
+  right: 0;
+  text-align: center;
+  transform: translateX(100%);
+  transition: all 0.3s;
+  width: 30%;
+}
+
+nav.globalMenuSp ul {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  list-style: none;
+}
+
+nav.globalMenuSp ul li .header-content {
+  display: block;
+  padding: 0.5em 0;
+  text-decoration :none;
+}
+
+/* このクラスをjQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateX(0%);
+}
+
+@media screen and (max-width: 599px) {
+  .header-content, .login-btn, .sign-up-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
+}
+
 /*main*/
 
 .top {

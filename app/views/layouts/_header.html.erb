@@ -8,9 +8,32 @@
       <%= link_to "マイページ", "/", class: "header-content" %>
       <%= link_to "設定", edit_user_registration_path, class: "header-content" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-content" %>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="globalMenuSp">
+        <ul>
+          <li><%= link_to "マイページ", "/", class: "header-content" %></li>
+          <li><%= link_to "設定", edit_user_registration_path, class: "header-content" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-content" %></li>
+        </ul>
+      </nav>
     <% else %>
       <%= link_to "ログイン", new_user_session_path, class: "btn login-btn" %>
       <%= link_to "登録する", new_user_registration_path, class: "btn sign-up-btn" %>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="globalMenuSp">
+        <ul>
+          <li><%= link_to "ログイン", new_user_session_path, class: "header-content" %></li>
+          <li><%= link_to "登録する", new_user_registration_path, class: "header-content" %></li>
+        </ul>
+      </nav>
     <% end %>
     </div>
   </div>
