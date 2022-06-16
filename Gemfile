@@ -47,6 +47,9 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
+
+  gem "devise"
+  gem "rails-i18n"
 end
 
 group :development do

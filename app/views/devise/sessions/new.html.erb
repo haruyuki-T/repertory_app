@@ -1,0 +1,28 @@
+<div class="container devise">
+  <div class="devise-box">
+    <p class="devise-title">ログイン</p>
+    <div class="devise-inner">
+
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+
+        <div class="field">
+          <div class="required">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "devise-form" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="required">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "devise-form" %>
+          </div>
+        </div>
+
+        <div class="action-btn">
+          <%= f.submit "ログインする", class: "devise-login-btn" %>
+        </div>
+      <% end %>
+
+      <%= link_to "新しいアカウントを作成", new_user_registration_path %>
+    </div>
+  </div>
+</div>
