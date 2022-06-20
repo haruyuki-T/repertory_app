@@ -50,6 +50,12 @@ group :development, :test do
 
   gem "devise"
   gem "rails-i18n"
+
+  # music
+  gem "rspotify"
+  gem "dotenv-rails"
+
+  gem "kaminari"
 end
 
 group :development do
