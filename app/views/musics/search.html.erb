@@ -1,0 +1,24 @@
+<div class="top">
+  <div class="container">
+    <div class="form-container">
+      <h1>曲を検索</h1>
+      <%= form_with url: search_musics_path, method: :get, local: true do |form| %>
+        <%= form.text_field :search, class: "search-form" %>
+        <%= form.submit '検索', name: nil, class: "search-btn" %>
+      <% end %>
+
+      <div class="result-container">
+        <% if @searchtracks.present? %>
+        <h2>検索結果</h2>
+          <% @searchtracks.each do |searchtrack| %>
+            <div class="result">
+              <%= link_to music_path(searchtrack.id) do %>
+                <p><%= searchtrack.name %>/<%= searchtrack.artists.map(&:name).join(",") %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
