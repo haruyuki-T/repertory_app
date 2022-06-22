@@ -8,10 +8,10 @@ class MusicsController < ApplicationController
   def search
     @musics = Music.all
     if params[:search].present?
-      @searchtracks = RSpotify::Track.search(params[:search])
+      @searchtracks = Kaminari.paginate_array(RSpotify::Track.search(params[:search], limit: 50)).page(params[:page]).per(20)
     end
   end
-
+ 
   def show
     @track = RSpotify::Track.find(params[:id])
   end
