@@ -1,0 +1,3 @@
+class ScenesController < ApplicationController
+
+end
