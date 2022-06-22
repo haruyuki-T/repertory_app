@@ -1,5 +1,6 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
 
+class PostsController < ApplicationController
   def index
     @posts = Post.where(user_id: current_user.id)
     @default_scene = Post.where(scene_id: 4)
@@ -21,9 +22,7 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def post_params
-    params.permit(:user_id, :scene_id, :artist_name, :song_title)
-  end
-
+    def post_params
+      params.permit(:user_id, :scene_id, :artist_name, :song_title)
+    end
 end
