@@ -1,0 +1,12 @@
+<div class="top">
+  <div class="container">
+    <div class="form-container">
+      <h1>曲情報</h1>
+      <%= image_tag(@track.album.images[1]["url"]) %>
+      <p class="music-content"><%= @track.name %>/<%= @track.artists.map(&:name).join(",") %>
+      <div class="btn-area">
+        <%= link_to "戻る", :back, class: "devise-back-btn" %>
+      </div>
+    </div>
+  </div>
+</div>

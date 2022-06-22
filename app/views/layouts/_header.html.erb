@@ -5,6 +5,7 @@
   <div class="header-right">
     <div class="header-right-item">
     <% if user_signed_in? %>
+      <%= link_to "曲を追加", search_musics_path, class: "header-content" %>
       <%= link_to "マイページ", "/", class: "header-content" %>
       <%= link_to "設定", edit_user_registration_path, class: "header-content" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-content" %>
@@ -15,6 +16,7 @@
       </div>
       <nav class="globalMenuSp">
         <ul>
+          <li><%= link_to "曲を追加", search_musics_path, class: "header-content" %></li>
           <li><%= link_to "マイページ", "/", class: "header-content" %></li>
           <li><%= link_to "設定", edit_user_registration_path, class: "header-content" %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-content" %></li>
