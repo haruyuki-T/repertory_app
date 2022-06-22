@@ -2,12 +2,8 @@
   <div class="container">
     <div class="form-container">
       <h1>曲情報</h1>
-      <% if @track.artists.map(&:images).any? %>
-        <% image = @track.artists.map(&:images) %>
-        <%#<%= image_tag(image["url"]) %>
-      <% end %>
+      <%= image_tag(@track.album.images[1]["url"]) %>
       <p class="music-content"><%= @track.name %>/<%= @track.artists.map(&:name).join(",") %>
-      
       <div class="btn-area">
         <%= link_to "戻る", :back, class: "devise-back-btn" %>
       </div>
