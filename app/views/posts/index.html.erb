@@ -1,0 +1,28 @@
+<div class="top">
+  <div class="container">
+    <div class="about-container">
+
+      <h2 class="scene-title">未分類</h2>
+      <ul class="repertory-content">
+        <% @default_scene.each do |post| %>
+          <li class="repertory-list"><%= post.song_title %>/<%= post.artist_name %></li>
+        <% end %>
+      </ul>
+
+      <h2 class="scene-title">同年代</h2>
+      <ul class="repertory-content">
+        <% @same_age_scene.each do |post| %>
+          <li class="repertory-list"><%= post.song_title %>/<%= post.artist_name %></li>
+        <% end %>
+      </ul>
+
+      <h2 class="scene-title">上司</h2>
+      <ul class="repertory-content">
+        <% @boss_scene.each do |post| %>
+          <li class="repertory-list"><%= post.song_title %>/<%= post.artist_name %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>

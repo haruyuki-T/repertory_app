@@ -3,11 +3,18 @@
 require "rails_helper"
 
 RSpec.describe Music, type: :system do
-  describe "曲を検索" do
-    before do
-      visit search_musics_path
-    end
+  let!(:user) { create(:user) }
+  let!(:scene) { create(:scene) }
 
+  before do
+    visit user_session_path
+    fill_in "user_email", with: user.email
+    fill_in "user_password", with: user.password
+    click_button "ログインする"
+    visit search_musics_path
+  end
+
+  describe "曲を検索" do
     context "正常な値" do
       it "検索ワードが含まれる結果を表示" do
         fill_in "search", with: "東京"
@@ -28,6 +35,15 @@ RSpec.describe Music, type: :system do
         click_button "検索"
         expect(page).not_to have_selector("result")
       end
+    end
+  end
+
+  describe "曲をレパートリーに追加" do
+    it "「未分類」カラムに追加される" do
+      fill_in "search", with: "東京"
+      click_button "検索"
+      expect { click_on "追加する", match: :first }.to change(Post, :count).by(1)
+      expect(page).to have_selector(".notice", text: "曲を追加しました。")
     end
   end
 end
