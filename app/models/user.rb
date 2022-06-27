@@ -9,7 +9,6 @@
 #  email                  :string(255)      not null
 #  sex                    :integer
 #  age                    :integer
-#  picture                :string(255)
 #  introduction           :text(65535)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
