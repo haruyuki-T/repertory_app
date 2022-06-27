@@ -13,9 +13,9 @@
           <% @searchtracks.each do |searchtrack| %>
             <div class="result">
               <%= link_to music_path(searchtrack.id) do %>
-                <p><%= searchtrack.name %>/<%= searchtrack.artists.map(&:name).join(",") %>
-                <%= link_to "追加", {controller: "posts", action: "create",scene_id: 4, user_id: current_user.id, artist_name: searchtrack.artists.map(&:name).join(","), song_title: searchtrack.name}, method: :post, class: "btn add-btn" %>
+                <p><%= searchtrack.name %> / <%= searchtrack.artists.map(&:name).join(",") %>
               <% end %>
+                <%= link_to "追加する", {controller: "posts", action: "create",scene_id: 1, user_id: current_user.id, artist_name: searchtrack.artists.map(&:name).join(","), song_title: searchtrack.name}, method: :post, class: "btn add-btn" %>
             </div>
           <% end %>
           <%= paginate @searchtracks %>
