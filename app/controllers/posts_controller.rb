@@ -3,9 +3,9 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.where(user_id: current_user.id)
-    @default_scene = Post.where(scene_id: 4)
-    @same_age_scene = Post.where(scene_id: 5)
-    @boss_scene = Post.where(scene_id: 6)
+    @default_scene = Post.where(scene_id: 1).order(:artist_name)
+    @same_age_scene = Post.where(scene_id: 2).order(:artist_name)
+    @boss_scene = Post.where(scene_id: 3).order(:artist_name)
   end
 
   def new
