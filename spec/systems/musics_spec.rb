@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Music, type: :system do
-  let!(:user) { create(:user) }
+  let(:user) { create(:user) }
   let!(:scene) { create(:scene, :a) }
 
   before do
