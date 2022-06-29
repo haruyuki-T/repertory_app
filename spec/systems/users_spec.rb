@@ -3,8 +3,7 @@
 require "rails_helper"
 
 RSpec.describe User, type: :system do
-  let!(:user) { create(:user) }
-  let(:other_user) { create(:user) }
+  let(:user) { create(:user) }
 
   describe "ユーザーCRUD処理" do
     describe "ユーザー新規登録" do
