@@ -22,22 +22,22 @@ RSpec.describe Post, type: :system do
   describe "レパートリーの分類を変更" do
     context "「未分類」の場合" do
       it "「同年代」へ変更" do
-        within page.all('ul')[1] do
+        within page.all("ul")[1] do
           select "同年代", from: "post_scene_id"
           click_on "変更"
         end
-        within page.all('ul')[2] do
+        within page.all("ul")[2] do
           expect(page).to have_content post.song_title
           expect(page).to have_content post.artist_name
         end
       end
 
       it "「上司」へ変更" do
-        within page.all('ul')[1] do
+        within page.all("ul")[1] do
           select "上司", from: "post_scene_id"
           click_on "変更"
         end
-        within page.all('ul')[3] do
+        within page.all("ul")[3] do
           expect(page).to have_content post.song_title
           expect(page).to have_content post.artist_name
         end
@@ -46,22 +46,22 @@ RSpec.describe Post, type: :system do
 
     context "「同年代」の場合" do
       it "「未分類」へ変更" do
-        within page.all('ul')[2] do
+        within page.all("ul")[2] do
           select "未分類", from: "post_scene_id"
           click_on "変更"
         end
-        within page.all('ul')[1] do
+        within page.all("ul")[1] do
           expect(page).to have_content post.song_title
           expect(page).to have_content post.artist_name
         end
       end
 
       it "「上司」へ変更" do
-        within page.all('ul')[2] do
+        within page.all("ul")[2] do
           select "上司", from: "post_scene_id"
           click_on "変更"
         end
-        within page.all('ul')[3] do
+        within page.all("ul")[3] do
           expect(page).to have_content post.song_title
           expect(page).to have_content post.artist_name
         end
@@ -70,22 +70,22 @@ RSpec.describe Post, type: :system do
 
     context "「上司」の場合" do
       it "「未分類」へ変更" do
-        within page.all('ul')[3] do
+        within page.all("ul")[3] do
           select "未分類", from: "post_scene_id"
           click_on "変更"
         end
-        within page.all('ul')[1] do
+        within page.all("ul")[1] do
           expect(page).to have_content post.song_title
           expect(page).to have_content post.artist_name
         end
       end
 
       it "「同年代」へ変更" do
-        within page.all('ul')[3] do
+        within page.all("ul")[3] do
           select "同年代", from: "post_scene_id"
           click_on "変更"
         end
-        within page.all('ul')[2] do
+        within page.all("ul")[2] do
           expect(page).to have_content post.song_title
           expect(page).to have_content post.artist_name
         end
