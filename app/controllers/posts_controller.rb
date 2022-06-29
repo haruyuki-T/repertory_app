@@ -2,10 +2,9 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(user_id: current_user.id)
-    @default_scene = Post.where(scene_id: 1).order(:artist_name)
-    @same_age_scene = Post.where(scene_id: 2).order(:artist_name)
-    @boss_scene = Post.where(scene_id: 3).order(:artist_name)
+    @default_scene = Post.where(user_id: current_user.id, scene_id: 1).order(:artist_name)
+    @same_age_scene = Post.where(user_id: current_user.id, scene_id: 2).order(:artist_name)
+    @boss_scene = Post.where(user_id: current_user.id, scene_id: 3).order(:artist_name)
   end
 
   def new
@@ -22,10 +21,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @posts = Post.where(user_id: current_user.id)
-    @default_scene = Post.where(scene_id: 1).order(:artist_name)
-    @same_age_scene = Post.where(scene_id: 2).order(:artist_name)
-    @boss_scene = Post.where(scene_id: 3).order(:artist_name)
+    @default_scene = Post.where(user_id: current_user.id, scene_id: 1).order(:artist_name)
+    @same_age_scene = Post.where(user_id: current_user.id, scene_id: 2).order(:artist_name)
+    @boss_scene = Post.where(user_id: current_user.id, scene_id: 3).order(:artist_name)
   end
 
   def update
