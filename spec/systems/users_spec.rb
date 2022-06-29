@@ -145,4 +145,11 @@ RSpec.describe User, type: :system do
       end
     end
   end
+
+  it "ゲストログインが成功" do
+    visit new_user_session_path
+    click_on "ゲストログインはこちら（閲覧用）"
+    expect(current_path).to eq root_path
+    expect(page).to have_selector(".notice", text: "ゲストユーザーとしてログインしました。")
+  end
 end
