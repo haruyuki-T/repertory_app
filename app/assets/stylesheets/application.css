@@ -335,12 +335,23 @@ label {
 }
 
 /*posts*/
+.post-title {
+  margin-bottom: 30px;
+}
+
+.post-link {
+  text-decoration: none;
+  color: #4a90e2;
+  padding: 15px;
+  font-size: 16px;
+}
+
 .scene-title {
   border-bottom: 0.5px solid #ced4da;
 }
 
 .repertory-content {
-  margin: 10px 0 50px 0;
+  margin-bottom: 50px;
 }
 
 .repertory-list {
@@ -348,4 +359,29 @@ label {
   list-style: none;
   text-align: left;
   font-size: 15px;
+}
+
+.delete-btn {
+  background-color: #ff0000;
+  font-size: 13px;
+  padding: 2px 4px;
+  margin-left: 10px;
+}
+
+.post-btn {
+  background-color: #c0c0c0;
+  color: #000000;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 2px 4px;
+}
+
+.post-form {
+  padding: 2px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-left: 10px;
 }

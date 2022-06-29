@@ -1,0 +1,51 @@
+<div class="top">
+  <div class="container">
+    <div class="about-container">
+      <h1 class="post-title">レパートリー編集</h1>
+
+      <h2 class="scene-title">未分類</h2>
+      <ul class="repertory-content">
+        <% @default_scene.each do |post| %>
+          <li class="repertory-list">
+            <%= form_with model: post do |form| %>
+              <%= post.song_title %> / <%= post.artist_name %>
+              <%= form.select :scene_id, [['同年代', 2], ['上司', 3]], { include_blank: "選択" }, class: "post-form" %>
+              <%= form.submit "変更", class: "btn post-btn" %>
+              <%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"}, class: "btn delete-btn" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+      <h2 class="scene-title">同年代</h2>
+      <ul class="repertory-content">
+        <% @same_age_scene.each do |post| %>
+          <li class="repertory-list">
+            <%= form_with model: post do |form| %>
+              <%= post.song_title %> / <%= post.artist_name %>
+              <%= form.select :scene_id, [['未分類', 1], ['上司', 3]], { include_blank: "選択" }, class: "post-form" %>
+              <%= form.submit "変更", class: "btn post-btn" %>
+              <%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"}, class: "btn delete-btn" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+      <h2 class="scene-title">上司</h2>
+      <ul class="repertory-content">
+        <% @boss_scene.each do |post| %>
+          <li class="repertory-list">
+            <%= form_with model: post do |form| %>
+              <%= post.song_title %> / <%= post.artist_name %>
+              <%= form.select :scene_id, [['未分類', 1], ['同年代', 2]], { include_blank: "選択" }, class: "post-form" %>
+              <%= form.submit "変更", class: "btn post-btn" %>
+              <%= link_to "削除", post, method: :delete, data: {confirm: "削除しますか？"}, class: "btn delete-btn" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= link_to "戻る", posts_path, class: "post-link" %>
+    </div>
+  </div>
+</div>
