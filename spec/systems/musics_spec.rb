@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe Music, type: :system do
   let!(:user) { create(:user) }
-  let!(:scene) { create(:scene) }
+  let!(:scene) { create(:scene, :a) }
 
   before do
     visit user_session_path
