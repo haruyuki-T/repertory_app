@@ -52,8 +52,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-#production:
-#  <<: *default
-#  database: repertory_app_production
-#  username: repertory_app
-#  password: <%= ENV['REPERTORY_APP_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: repertory_app_production
+  username: <%= Rails.application.credentials.db[:user_name] %>
+  password: <%= Rails.application.credentials.db[:password] %>
