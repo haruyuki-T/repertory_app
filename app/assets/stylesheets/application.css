@@ -16,7 +16,7 @@ body {
 /*header*/
 
 header {
-  background-color: #808080;
+  background-color: #a9a9a9;
   width: 100%;
   height: 60px;
   padding: 4px 30px;
@@ -29,7 +29,7 @@ header {
 
 .header-logo {
   display: block;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   line-height: 50px;
@@ -168,7 +168,7 @@ nav.globalMenuSp.active {
 
 .about-title {
   font-size: 30px;
-  border-bottom: 1px solid #4a90e2;
+  border-bottom: 1px solid #696969;
   padding-bottom: 10px;
 }
 
