@@ -1,24 +1,66 @@
-# README
+<h1>アプリ名 「カラオケBOX」</h1>
+<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1>なぜ作ったのか</h1>
+　カラオケで自分の順が回ってきた時、何の曲を入れようか決まらずに焦ったという経験がある人は多いと思う。そんな焦りを解消するために作ったサービス。<br>
+　持ち歌をマイページに保存しておくことで、上司とのカラオケも安心して臨める。<br>
+<br>
 
-Things you may want to cover:
+<h1>使用技術</h1>
+<h3>フロントエンド</h3>
+ HTML/CSS<br>
+ jQuery<br>
+<br>
 
-* Ruby version
+<h3>バックエンド</h3>
+ Ruby2.7.5<br>
+ Ruby on Rails 6.1.5<br>
+<br>
 
-* System dependencies
+<h3>インフラ</h3>
+ Docker / Docker-Compose<br>
+<br>
 
-* Configuration
+<h3>主要gem</h3>
+ devise :ログイン機能<br>
+ rspec :テストフレームワーク<br>
+ rubocop :Lintツール<br>
+ ridgepole :マイグレーションツール<br>
+ rspotify :SpotifyAPIの使用<br>
+<br>
 
-* Database creation
+<h1>機能一覧</h1>
+・新規会員登録/ログイン機能<br>
+・ゲストログイン<br>
+・曲検索<br>
+・曲レパートリー追加/編集<br>
+<br>
 
-* Database initialization
+<h1>使い方</h1>
+<h3>曲レパートリーの追加方法</h3>
+①ヘッダー内「曲を追加」リンクから検索ページへ<br>
+②追加したい曲名を入力して「検索」<br>
+③曲名の右の「追加」リンクを押すと、マイページの「未分類」に曲が追加される<br>
+※検索フォームは「アーティスト名」でも検索可能<br>
+<br>
 
-* How to run the test suite
+<h3>曲レパートリーの編集方法</h3>
+①マイページ下部の「分類を編集する」から編集ページへ<br>
+②分類を変更する場合、プルダウンで変更先を選んで「変更」<br>
+③曲を削除する場合、削除ボタン<br>
+<br>
 
-* Services (job queues, cache servers, search engines, etc.)
+<h1>こだわりポイント</h1>
+<h3>ユーザー目線</h3>
+①カラオケ中に見ることを想定し、マイページの曲レパートリーが一目でわかるように作成。<br>
 
-* Deployment instructions
+②同じ検索結果ページから複数の曲をレパートリーに追加できるように実装。<br>
+<br>
 
-* ...
+<h3>開発面</h3>
+①Spotify APIを利用するため、RSpotifyというgemを使用。<br>
+これにより正確な曲名やアーティスト名を取得することができるため、マイページの表示はアーティスト名の五十音順に並び替えて可読性を上げることができた。<br>
+<br>
+②マイグレーションツールにridgepoleというgemを使用。<br>
+初めての開発であるため、開発中に設計を変更することがあると想定。<br>
+初期からridgepoleを導入することで、Schemafileの編集だけでスキーマを修正できるように。
