@@ -23,4 +23,4 @@ create_table :users, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bi
 end
 
 add_index :users, :email,                unique: true
-add_index :users, :reset_password_token, unique: true
+add_index :users, :reset_password_token, name: "index_users_on_reset_pass", unique: true
