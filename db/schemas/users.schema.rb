@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 create_table :users, force: :cascade, charset: "utf8mb4", collation: "utf8mb4_bin" do |t|
-  t.string  :name, null: false
-  t.string  :email, null: false
+  t.string  :name, null: false, limit: 191
+  t.string  :email, null: false, limit: 191
   t.integer  :sex
   t.integer  :age
-  t.text :introduction
+  t.text :introduction, limit: 191
   t.datetime :created_at, null: false
   t.datetime :updated_at, null: false
 
   ## Database authenticatable
-  t.string :encrypted_password, null: false, default: ""
+  t.string :encrypted_password, null: false, default: "", limit: 191
 
   ## Recoverable
-  t.string   :reset_password_token
+  t.string   :reset_password_token, limit: 191
   t.datetime :reset_password_sent_at
 
   ## Rememberable
