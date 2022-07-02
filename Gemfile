@@ -34,9 +34,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
-  # migration
-  gem "ridgepole"
-
   # debug
   gem "pry-rails"
   gem "better_errors"
@@ -83,3 +80,5 @@ gem "kaminari"
 # music
 gem "rspotify"
 gem "dotenv-rails"
+# migration
+gem "ridgepole"
